@@ -1,209 +1,31 @@
-{% comment %}
-This is the typical schedule for the Data Carpentry workshops.
-The schedule for the different curricula are listed here:
-- dc-astronomy
-- dc-ecology
-- dc-genomics
-- dc-socsci
-- dc-geosptial
-{% endcomment %}
-
-{% if site.curriculum == "dc-astronomy" %}
 <div class="row">
   <div class="col-md-6">
     <h3>Day 1</h3>
     <table class="table table-striped">
-      <tr>
-	<td>Before starting</td>
-	<td><a href="{{ site.pre_survey }}{{ site.github.project_title }}" target="_blank">Pre-workshop survey</a></td>
-      </tr>
-      <tr><td>Morning</td> <td> <a href="https://datacarpentry.org/astronomy-python/01-query/">Basic Queries</a></td></tr>
-      <tr><td> </td><td><a href="https://datacarpentry.org/astronomy-python/02-coords/">Coordinate Transformations</a></td></tr>
-      <tr><td>Afternoon</td> <td> <a href="https://datacarpentry.org/astronomy-python/03-motion/">Plotting and Pandas</a></td></tr>
-      <tr><td> </td><td><a href="https://datacarpentry.org/astronomy-python/04-select/">Transform and Select</a></td></tr>
+      <tr> <td>Before</td> <td><a href="https://datacarpentry.org/R-ecology-lesson/#setup-instructions">Setup R and RStudio</a> </td> </tr>
+      <tr> <td></td> <td><a href="{{ site.swc_pre_survey }}{{ site.github.project_title }}">Pre-workshop survey</a> </td> </tr>
+      <tr> <td>10:00 AM</td>  <td><a href="http://swcarpentry.github.io/r-novice-gapminder/01-rstudio-intro/index.html">Intro to R and R Studio</a></td> </tr>
+      <tr> <td>11:30</td>  <td>Morning break - 30 mins</td> </tr>
+      <tr> <td>12:00</td>  <td><a href="http://swcarpentry.github.io/r-novice-gapminder/04-data-structures-part1/index.html">Basics of working with data in R - I</a></td></tr>
+      <tr> <td>1:00 PM</td>  <td>Lunch break - 1 hr</td> </tr>
+      <tr> <td>2:00</td>  <td><a href="http://swcarpentry.github.io/r-novice-gapminder/06-data-subsetting/index.html">Basics of working with data in R - II</a></td> </tr>
+      <tr> <td>3:30</td>  <td>Afternoon break- 30 mins</td> </tr>
+      <tr> <td>4:00</td>  <td><a href="http://swcarpentry.github.io/r-novice-gapminder/13-dplyr/index.html">Data Manipulation with dplyr</a></td> </tr>
+      <tr> <td>5:30</td>  <td>END</td> </tr>
     </table>
   </div>
   <div class="col-md-6">
     <h3>Day 2</h3>
     <table class="table table-striped">
-      <tr><td>Morning</td> <td> <a href="https://datacarpentry.org/astronomy-python/05-join/">Join</a></td></tr>
-      <tr><td> </td><td><a href="https://datacarpentry.org/astronomy-python/06-photo/">Photometry</a></td></tr>
-      <tr><td>Afternoon</td> <td> <a href="https://datacarpentry.org/astronomy-python/06-photo/">Photometry (cont.)</a></td></tr>
-      <tr><td> </td><td><a href="https://datacarpentry.org/astronomy-python/07-plot/">Visualization</a></td></tr>
+      <tr> <td>10:00 AM</td>  <td><a href="http://swcarpentry.github.io/r-novice-gapminder/07-control-flow/index.html">Control Flow</a></td> </tr>
+      <tr> <td>11:30</td>  <td>Morning break - 30 mins</td> </tr>
+      <tr> <td>12:00</td>  <td><a href="http://swcarpentry.github.io/r-novice-gapminder/10-functions/index.html">Functions Explained</a></td> </tr>
+      <tr> <td>1:00 PM</td>  <td>Lunch break - 1 hr</td> </tr>
+      <tr> <td>2:00</td>  <td><a href="http://swcarpentry.github.io/r-novice-gapminder/08-plot-ggplot2/index.html">Creating Publication-Quality Graphics with ggplot2</a></td> </tr>
+      <tr> <td>3:30</td>  <td>Afternoon break - 30 mins</td> </tr>
+      <tr> <td>4:00</td>  <td><a href="http://swcarpentry.github.io/r-novice-gapminder/13-dplyr/index.html">R data manipulation and visualization, continued</a></td> </tr>
+      <tr> <td>5:30</td>  <td><a href="{{ site.swc_post_survey }}{{ site.github.project_title }}" target="_blank">Post-workshop Survey</a></td> </tr>
+      <tr> <td>6:00</td>  <td>END</td> </tr>
     </table>
   </div>
 </div>
-
-{% elsif site.curriculum == "dc-ecology" %}
-<div class="row">
-  <div class="col-md-6">
-    <h3>Day 1</h3>
-    <table class="table table-striped">
-      <tr>
-	<td>Before starting</td>
-	<td><a href="{{ site.pre_survey }}{{ site.github.project_title }}" target="_blank">Pre-workshop survey</a></td>
-      </tr>
-      <tr><td>Morning</td> <td> <a href="https://datacarpentry.org/spreadsheet-ecology-lesson/">Data Organization in Spreadsheets</a></td></tr>
-      <tr><td> </td><td><a href="https://datacarpentry.org/OpenRefine-ecology-lesson/">OpenRefine for Data Cleaning</a></td></tr>
-      <tr>
-        <td>Afternoon</td>
-        <td>
-          {% if site.flavor == "r" %}
-          <a href="https://datacarpentry.org/R-ecology-lesson/">Introduction to R</a>
-          {% elsif site.flavor == "python" %}
-          <a href="https://datacarpentry.org/python-ecology-lesson/">Introduction to Python</a>
-          {% else %}
-          {% include warning-flavor.html %}
-          {% endif %}
-      </td></tr>
-      <tr> <td>Evening</td> <td>END</td> </tr>
-    </table>
-  </div>
-  <div class="col-md-6">
-    <h3>Day 2</h3>
-    <table class="table table-striped">
-      <tr> <td>Morning</td>
-        <td>
-          {% if site.flavor == "r" %}
-          <a href="https://datacarpentry.org/R-ecology-lesson/">Continuation of R: Data analysis and Visualization</a>
-          {% elsif site.flavor == "python" %}
-          <a href="https://datacarpentry.org/python-ecology-lesson/">Continuation of Python: Data analysis and Visualization</a>
-          {% else %}
-          {% include warning-flavor.html %}
-          {% endif %}
-        </td>
-      </tr>
-      <tr> <td>Afternoon</td><td><a href="https://datacarpentry.org/sql-ecology-lesson/">Data Management with SQL</a></td></tr>
-      <tr>
-	<td>Evening</td>
-	<td><a href="{{ site.post_survey }}{{ site.github.project_title }}" target="_blank">Post-workshop survey</a></td>
-      </tr>
-      <tr>
-	<td> </td>
-	<td> END </td>
-      </tr>
-    </table>
-  </div>
-</div>
-
-{% elsif site.curriculum == "dc-genomics" %}
-
-<div class="row">
-  <div class="col-md-6">
-    <h3>Day 1</h3>
-    <table class="table table-striped">
-      <tr>
-	<td>Before starting</td>
-	<td><a href="{{ site.pre_survey }}{{ site.github.project_title }}" target="_blank">Pre-workshop survey</a></td>
-      </tr>
-      <tr><td>Morning</td> <td> <a href="https://datacarpentry.org/organization-genomics/">Project Organization and Management</a></td></tr>
-      <tr><td> </td><td><a href="https://datacarpentry.org/shell-genomics/">Introduction to the Command Line</a></td></tr>
-      <tr><td>Afternoon</td><td><a href="https://datacarpentry.org/wrangling-genomics/">Data Wrangling and Processing</a></td></tr>
-			<tr> <td>Evening</td> <td>END</td> </tr>
-    </table>
-  </div>
-  <div class="col-md-6">
-    <h3>Day 2</h3>
-    <table class="table table-striped">
-			<tr><td>Morning</td><td><a href="https://datacarpentry.org/wrangling-genomics/">Continuation: Data Wrangling and Processing</a></td></tr>
-			<tr><td>Afternoon</td><td><a href="https://datacarpentry.org/cloud-genomics/">Introduction to Cloud Computing for Genomics</a></td></tr>
-      <tr>
-	<td>Evening</td>
-	<td><a href="{{ site.post_survey }}{{ site.github.project_title }}" target="_blank">Post-workshop survey</a></td>
-      </tr>
-      <tr>
-	<td> </td>
-	<td> END </td>
-      </tr>
-    </table>
-  </div>
-</div>
-
-{% elsif site.curriculum == "dc-socsci" %}
-
-<div class="row">
-  <div class="col-md-6">
-    <h3>Day 1</h3>
-    <table class="table table-striped">
-      <tr>
-	<td>Before starting</td>
-	<td><a href="{{ site.pre_survey }}{{ site.github.project_title }}" target="_blank">Pre-workshop survey</a></td>
-      </tr>
-      <tr><td>Morning</td> <td> <a href="https://datacarpentry.org/spreadsheets-socialsci/">Data Organization in Spreadsheets</a></td></tr>
-      <tr><td> </td><td><a href="https://datacarpentry.org/openrefine-socialsci/">OpenRefine for Data Cleaning</a></td></tr>
-      <tr><td>Afternoon</td><td><a href="https://datacarpentry.org/r-socialsci/">Introduction to R</a></td></tr>
-      <tr> <td>Evening</td> <td>END</td> </tr>
-    </table>
-  </div>
-  <div class="col-md-6">
-    <h3>Day 2</h3>
-    <table class="table table-striped">
-      <tr> <td>Morning</td> <td><a href="https://datacarpentry.org/r-socialsci/">Continuation of R: Data Analysis & Visualization</a></td></tr>
-      <tr> <td>Afternoon</td><td><a href="https://datacarpentry.org/sql-socialsci/">Data Management with SQL</a></td></tr>
-      <tr>
-	<td>Evening</td>
-	<td><a href="{{ site.post_survey }}{{ site.github.project_title }}" target="_blank">Post-workshop survey</a></td>
-      </tr>
-      <tr>
-	<td> </td>
-	<td> END </td>
-      </tr>
-    </table>
-  </div>
-</div>
-
-
-{% elsif site.curriculum == "dc-geospatial" %}
-
-<div class="row">
-  <div class="col-md-6">
-    <h3>Day 1</h3>
-    <table class="table table-striped">
-      <tr>
-	<td>Before starting</td>
-	<td><a href="{{ site.pre_survey }}{{ site.github.project_title }}" target="_blank">Pre-workshop survey</a></td>
-      </tr>
-      <tr>
-        <td>Morning</td>
-        <td><a href="https://datacarpentry.org/organization-geospatial/">Introduction to Geospatial Concepts</a>
-        </td>
-      </tr>
-      <tr>
-        <td> </td>
-        <td><a href="https://datacarpentry.org/r-intro-geospatial/">Introduction to R for Geospatial Data</a></td>
-      </tr>
-      <tr>
-        <td>Afternoon</td>
-        <td><a href="https://datacarpentry.org/r-intro-geospatial/">Introduction to R for Geospatial Data (continued)</a></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td><a href="https://datacarpentry.org/r-raster-vector-geospatial/">Introduction to Geospatial Raster and Vector Data with R</a> (Part 1)</td>
-      </tr>
-      <tr>
-        <td>Evening</td>
-        <td>END</td>
-      </tr>
-    </table>
-  </div>
-
-  <div class="col-md-6">
-    <h3>Day 2</h3>
-    <table class="table table-striped">
-      <tr> <td>Morning</td> <td><a href="https://datacarpentry.org/r-raster-vector-geospatial/">Introduction to Geospatial Raster and Vector Data with R</a> (Part 2)</td></tr>
-      <tr> <td>Afternoon</td><td><a href="https://datacarpentry.org/r-raster-vector-geospatial/">Introduction to Geospatial Raster and Vector Data with R</a> (Part 3)</td></tr>
-      <tr>
-	<td>Evening</td>
-	<td><a href="{{ site.post_survey }}{{ site.github.project_title }}" target="_blank">Post-workshop survey</a></td>
-      </tr>
-      <tr>
-	<td> </td>
-	<td> END </td>
-      </tr>
-    </table>
-  </div>
-</div>
-
-{% else %}
-{% include warning-curriculum.html %}
-{% endif %}
